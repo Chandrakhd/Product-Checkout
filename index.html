@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Popup</title>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="checkout">
+      <div class="checkout_form" id="paymentFormDialog">
+        <div class="checkout_form_heading">
+          <h1 class="main_title">Checkout</h1>
+          <span
+            ><ion-icon class="checkout_icon" name="cart-outline"></ion-icon
+          ></span>
+        </div>
+        <!-- left -->
+        <div class="paymentMethod">
+          <h2>Shipping & Billing</h2>
+          <div class="shipping_address">
+            <div class="country_select">
+              <label for="country">Country</label>
+              <select name="" id="country">
+                <option value="">USA</option>
+                <option value="">Canada</option>
+                <option value="">UK</option>
+                <option value="">Australia</option>
+                <option value="">Germany</option>
+              </select>
+            </div>
+
+            <div class="fullName">
+              <label for="fullName">Full Name</label>
+              <input id="fullName" type="name" placeholder="Johh Doe" />
+            </div>
+
+            <div class="phoneNumber">
+              <label for="phoneNumber">Phone</label>
+              <input id="phoneNumber" type="tel" placeholder="123-564-789" />
+            </div>
+
+            <div class="address">
+              <label for="address">Address</label>
+              <input id="address" type="text" placeholder="123 text ave" />
+            </div>
+            <div class="city">
+              <label for="city">City</label>
+              <input id="city" type="text" placeholder="newyork" />
+            </div>
+            <div class="state">
+              <label for="state">State</label>
+              <input id="state" type="text" placeholder="NewYork" />
+            </div>
+
+            <div class="zipcode">
+              <label for="zipcode">Zip Code</label>
+              <input id="zipcode" type="number" placeholder="234566" />
+            </div>
+          </div>
+
+          <form method="" class="form_container">
+            <h2>Payment Methods</h2>
+            <div class="card_number">
+              <label for="cardNumber">Card Number:</label>
+              <input
+                type="number"
+                id="cardNumber"
+                name="cardNumber"
+                placeholder="Card Details"
+                required
+              />
+              <div class="card_icon">
+                <ion-icon class="card_num_icon" name="logo-paypal"></ion-icon
+                ><ion-icon class="card_num_icon" name="card-outline"></ion-icon
+                ><ion-icon class="card_num_icon" name="cash-outline"></ion-icon
+                ><ion-icon class="card_num_icon" name="logo-bitcoin"></ion-icon>
+              </div>
+            </div>
+
+            <div class="expiryDate">
+              <label for="expiryDate">Expires Date:</label>
+              <input
+                type="date"
+                id="expiryDate"
+                name="expiryDate"
+                placeholder="MM/YYYY"
+                required
+              />
+            </div>
+            <div class="cardCvv">
+              <label for="cvv">CVV:</label>
+              <input
+                type="text"
+                id="cvv"
+                name="cvv"
+                placeholder="CVV"
+                required
+              />
+            </div>
+
+            <div class="cardholderName">
+              <label for="name">Cardholder Name:</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="John Doe"
+                required
+              />
+            </div>
+          </form>
+        </div>
+
+        <!-- right -->
+        <div class="payment_summary">
+          <h2>Added Item</h2>
+          <!-- product -->
+          <div class="product_container">
+            <div class="product">
+              <div class="product_info_contain">
+                <img src="images/product1.jpg" alt="" />
+
+                <div class="product_info">
+                  <p class="product_info_heading">
+                    Premium Wireless Headphones for Immersive Audio
+                  </p>
+                  <p class="product_info_category">Education</p>
+                </div>
+              </div>
+              <div>
+                <label for="quantityProduct" class="quantity">Qty:</label>
+                <input
+                  type="number"
+                  id="quantityProduct"
+                  class="quantity-input"
+                  value="1"
+                  min="1"
+                  onchange="updateTotal()"
+                />
+              </div>
+            </div>
+            <div class="product">
+              <div class="product_info_contain">
+                <img src="images/product2.jpg" alt="" />
+
+                <div class="product_info">
+                  <p class="product_info_heading">
+                    High-Performance Goggles for Ultimate Vision and Style
+                  </p>
+                  <p class="product_info_category">Education</p>
+                </div>
+              </div>
+              <div>
+                <label for="quantityProduct" class="quantity">Qty:</label>
+                <input
+                  type="number"
+                  id="quantityProduct"
+                  class="quantity-input"
+                  value="1"
+                  min="1"
+                  onchange="updateTotal()"
+                />
+              </div>
+            </div>
+            <div class="product">
+              <div class="product_info_contain">
+                <img src="images/product3.jpg" alt="" />
+
+                <div class="product_info">
+                  <p class="product_info_heading">
+                    Eco-Friendly Reusable Water Bottle for Hydration On-the-Go
+                  </p>
+                  <p class="product_info_category">Education</p>
+                </div>
+              </div>
+              <div>
+                <label for="quantityProduct" class="quantity">Qty:</label>
+                <input
+                  type="number"
+                  id="quantityProduct"
+                  class="quantity-input"
+                  value="1"
+                  min="1"
+                  onchange="updateTotal()"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="order-summary">
+            <h2>Summary</h2>
+            <div>
+              <span>Subtotal</span>
+              <p>$20.00</p>
+            </div>
+            <div>
+              <span> Shipping & handling</span>
+              <p>$9.99</p>
+            </div>
+            <div>
+              <span>Total before tax</span>
+              <p>$20.99</p>
+            </div>
+            <div>
+              <span>Estimated tax to be collected</span>
+              <p>$0.90</p>
+            </div>
+
+            <hr />
+            <div class="total">
+              <span>Total</span>
+              <p>$50.00</p>
+            </div>
+          </div>
+
+          <button type="button" class="payment_btn">Make Payment ➡</button>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

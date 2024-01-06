@@ -1,0 +1,251 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
+    linear-gradient(to bottom right, #52b1e0, #f3e7e9);
+  background-size: cover;
+}
+
+.checkout {
+  padding: 2.4rem 1.6rem 2.4rem 1.6rem;
+  max-width: 120rem;
+  margin: 0 auto;
+}
+.checkout_form {
+  display: grid;
+  grid-template-columns: 4fr 2fr;
+
+  padding: 3.2rem 2.4rem;
+  gap: 8rem;
+  background: rgba(255, 255, 255, 0.9);
+
+  box-shadow: 0 0.5rem 3.2rem rgba(0, 0, 0, 0.1);
+  border-radius: 11px;
+  color: #495057;
+}
+.checkout_form_heading {
+  grid-column: 1 / -1;
+  font-size: 2rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.checkout_form_heading span {
+  display: inline-block;
+  border: 3px solid rgba(128, 128, 128, 0.5);
+  height: 4.8rem;
+  width: 4.8rem;
+  border-radius: 50%;
+  background-color: #5eb762;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.checkout_form_heading .checkout_icon {
+  height: 2.4rem;
+  width: 2.4rem;
+  object-fit: cover;
+}
+.paymentMethod h2,
+.form_container h2,
+.payment_summary h2,
+.order-summary h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.shipping_address label {
+  display: block;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.shipping_address input,
+select {
+  margin-bottom: 0.5rem;
+  padding: 1rem;
+  width: 100%;
+}
+.shipping_address {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 2.4rem;
+}
+
+.country_select,
+.fullName,
+.phoneNumber,
+.address {
+  flex: 1 1 48%;
+}
+
+.city,
+.state,
+.zipcode {
+  flex: 1 1 30%;
+}
+
+.product_container .product {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2.4rem;
+}
+.product_container .product .product_info_contain {
+  display: flex;
+  gap: 1.6rem;
+  align-items: center;
+}
+.product_container .product img {
+  width: 4.8rem;
+  height: auto;
+  object-fit: cover;
+}
+
+.product_info_heading {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+.product_info_category {
+  margin-bottom: 0.5rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+.quantity {
+  font-size: 1.4rem;
+}
+.quantity-input {
+  width: 3.6rem;
+  padding: 2px;
+  box-sizing: border-box;
+}
+.quantity-input {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+.quantity-input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* form */
+
+.form_container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 2.4rem;
+}
+
+.form_container input {
+  width: 100%;
+  margin-bottom: 0.5rem;
+  padding: 1rem;
+}
+.form_container label {
+  display: block;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.card_icon .card_num_icon {
+  height: 2.4rem;
+  width: 2.4rem;
+  filter: brightness(0);
+  opacity: 50%;
+}
+.card_number,
+.cardholderName {
+  flex: 1 1 100%;
+}
+.expiryDate,
+.cardCvv {
+  flex: 1 1 45%;
+}
+.payment_submit {
+  flex: 1;
+  padding: 1.2rem;
+  background-color: #e67e22;
+  font-size: 1.8rem;
+  border: none;
+  color: #fdf2e9;
+}
+
+/* payment summary */
+.order-summary {
+  margin-bottom: 6.4rem;
+}
+.order-summary span {
+  font-size: 1.8rem;
+}
+.order-summary p {
+  font-size: 1.6rem;
+}
+.order-summary div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+.total {
+  font-size: 2rem;
+  color: orangered;
+  font-weight: 600;
+}
+.payment_btn {
+  padding: 1.2rem;
+  background-color: #e67e22;
+  font-size: 1.8rem;
+  border: none;
+  color: #fdf2e9;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+.payment_btn:hover {
+  background-color: #b8651b;
+}
+
+/* if less than 1200px */
+@media (max-width: 75em) {
+  html {
+    font-size: 56.26%;
+  }
+}
+
+/* 945 */
+@media (max-width: 60em) {
+  html {
+    font-size: 50%;
+  }
+  .checkout_form {
+    grid-template-columns: 3fr 2fr;
+  }
+}
+
+/* like ipad mini and less */
+@media (max-width: 48em) {
+  .checkout_form {
+    grid-template-columns: 2fr 2fr;
+  }
+}
+@media (max-width: 38em) {
+  .checkout_form {
+    grid-template-columns: 1fr;
+  }
+}
